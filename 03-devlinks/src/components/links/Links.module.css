@@ -16,7 +16,7 @@ li a{
 }
 
 /* pseudo selector */
-li a :hover {
+li a:hover {
     background: var(--surface-color-hover);
     border: 1px solid var(--text-color);
 }

@@ -5,6 +5,9 @@
     & img{
         border: 4px solid rgba(146,146,146,0.8);
         width: 112px;
+        height: 112px;
+        object-fit: cover;
+        object-position: center;
         border-radius: 50%;
     }
 
