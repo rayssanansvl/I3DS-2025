@@ -16,6 +16,8 @@
       transform: translateY(-50%);
   
       animation: slide-out 0.2s;
+
+
     }
     & button:hover {
       outline: 8px solid var(--highlight-color);
@@ -33,7 +35,7 @@
     }
   }
   
-  .light #switch button {
+  .light #switch button  {
     animation: slide-in 0.2s forwards;
   }
   

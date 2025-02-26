@@ -35,32 +35,36 @@
 #App {
   background: var(--bg-url) no-repeat top center / cover;
   height: 100vh;
+  padding-top: 60px;
 }
+
+
 
 #container {
   width: 100%;
   max-width: 588px;
-  margin: 0px auto 0px;
-  padding: 0 24px;
-  padding-top: 56px;
+  margin: 56px auto 0px;
+  padding: 0px 24px;
 }
 
 #links ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   padding: 24px;
+
 }
 
 #socialLinks {
   display: flex;
   justify-content: center;
   padding: 24px;
-  gap: 16px;
-
+  gap: 30px;
+  margin-top: 20px;
   font-size: 24px;
 }
+
 
 @media (max-width: 700px) {
   :root {
@@ -70,3 +74,5 @@
     --bg-url: url(./img/bg-mobile-light.jpg);
   }
 }
+
+
