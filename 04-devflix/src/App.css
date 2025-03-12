@@ -82,6 +82,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -205,5 +206,19 @@ footer a {
 
 footer p ion-icon {
   color: #ff0000;
+}
+
+.movie-title {
+  position: absolute;
+  top: -30px; /* Ajuste a posição conforme necessário */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7); /* Fundo para melhor visibilidade */
+  color: #f9d3b4;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  width: auto;
 }
 

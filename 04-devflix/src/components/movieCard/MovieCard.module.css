@@ -1,0 +1,61 @@
+.movie {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+  }
+  
+  .movie .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  .movie:hover img {
+    filter: brightness(50%);
+    transform: scale(1.1);  /* Adiciona o efeito de zoom */
+  }
+  
+  .movie:hover .info {
+    opacity: 1;
+  }
+  
+  .movie p {
+    font-size: 1.2rem;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);  /* Centraliza o ano no topo */
+  }
+  
+  .movie h3, .movie h4 {
+    margin: 0;
+  }
+  
+  .movie h3 {
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 10px;
+  }
+  
+  .movie h4 {
+    position: absolute;
+    bottom: 0;
+  }
+  

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import MovieCard from "./components/movieCard/MovieCard";
+import Logo from "./assets/devflix.png"
+import Lupa from "./assets/search.svg"
 // import Logo from "";
 
 const App = () => {
@@ -33,7 +35,7 @@ const App = () => {
 
   return (
     <div id="app">
-      <img className="logo" src={"https://placehold.co/200x200"} alt="" />
+      <img className="logo" src={Logo} alt="" />
 
       <div className="search">
         <input
@@ -44,7 +46,7 @@ const App = () => {
         />
         <img
           onClick={() => searchMovies(search)}
-          src={"https://placehold.co/20x20"}
+          src={Lupa}
           alt=""
         />
       </div>

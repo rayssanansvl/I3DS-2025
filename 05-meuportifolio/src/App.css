@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  background-color: rgb(165, 197, 245);
+  --text-color: #fff;
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.5);
+  --switch-bg-url: url(./img/MoonStars.svg);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light {
+  background-color: rgb(165, 197, 245);
+  --text-color: #000;
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.5);
+  --switch-bg-url: url(./img/Sun.svg);
+  --highlight-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Modificações do body */
+#App * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#App {
+  background: var(--bg-url) no-repeat top center / cover;
+  height: 100vh;
+  padding-top: 60px;
+}
+
+#container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0px 24px;
+}
+
+#links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+#socialLinks {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  gap: 30px;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.sobreMim {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  :root {
+    background-color: rgb(165, 197, 245);
+  }
+  .light {
+    background-color: rgb(165, 197, 245);
+  }
+}
