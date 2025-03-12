@@ -52,6 +52,7 @@ const App = () => {
           icon={"medkit-outline"}
         />
         <SocialLinks link={"https://w.app/aive4o"} icon={"logo-whatsapp"} />
+        
       </div>
       <Rodape>Rayssa</Rodape>
     </div>

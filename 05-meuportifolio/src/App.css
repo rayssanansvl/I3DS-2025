@@ -63,8 +63,22 @@
 }
 
 .sobreMim {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  margin-top: 5px; /* Reduzi para aproximar do topo */
+  text-align: justify;
+  align-items: center;
 }
+
+.sobreMim p {
+  max-width: 600px; /* Mantém o limite de largura */
+  text-align: justify;
+  margin-top: -10px; /* Move o texto um pouco para cima */
+  padding-bottom: 10px; /* Ajuste fino para melhor espaçamento */
+}
+
 
 @media (max-width: 700px) {
   :root {

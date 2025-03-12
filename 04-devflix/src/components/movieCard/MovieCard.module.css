@@ -1,61 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+
 .movie {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .movie img {
-    width: 100%;
-    height: auto;
-    transition: all 0.3s ease;
-  }
-  
-  .movie .info {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    padding: 10px;
-    z-index: 1;
-  }
-  
-  .movie:hover img {
-    filter: brightness(50%);
-    transform: scale(1.1);  /* Adiciona o efeito de zoom */
-  }
-  
-  .movie:hover .info {
-    opacity: 1;
-  }
-  
-  .movie p {
-    font-size: 1.2rem;
-    margin: 0;
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);  /* Centraliza o ano no topo */
-  }
-  
-  .movie h3, .movie h4 {
-    margin: 0;
-  }
-  
-  .movie h3 {
-    margin-bottom: 10px;
-    position: absolute;
-    bottom: 10px;
-  }
-  
-  .movie h4 {
-    position: absolute;
-    bottom: 0;
-  }
-  
+  position: relative;
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Estilo da imagem */
+.movie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.movie:hover {
+  transform: scale(1.05);
+}
+
+/* Efeito de brilho quando passar o mouse sobre a imagem */
+.movie:hover img {
+  filter: brightness(0.7);
+}
+
+
+.year {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #f9d3b4;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+/* Ano aparece quando o mouse passa sobre o card */
+.movie:hover .year {
+  opacity: 1;
+}
+
+/* Faixa inferior com título e tipo do filme */
+.info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #343739;
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left; /* Alinha o texto à esquerda */
+  padding-left: 10px; /* Adiciona um pequeno espaçamento à esquerda */
+}
+
+/* Tipo do filme (acima do título) */
+.type {
+  font-size: 14px;
+  font-weight: bold; /* Aplica o peso da fonte negrito */
+  font-family: 'Roboto', sans-serif; /* Aplica a fonte Roboto */
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Título do filme com cor personalizada */
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f9d3b4;
+  margin: 0;
+}
+
+/* Tipo do filme (à esquerda) */
+.type {
+  font-family: 'Funnel display'; /* Fonte Rustica Medium ou similar */
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 0;
+  text-transform: uppercase; /* Deixa o texto em maiúsculas */
+}

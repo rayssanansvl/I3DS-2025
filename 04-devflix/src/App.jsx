@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import MovieCard from "./components/movieCard/MovieCard";
 import Logo from "./assets/devflix.png"
 import Lupa from "./assets/search.svg"
+
 // import Logo from "";
 
 const App = () => {
