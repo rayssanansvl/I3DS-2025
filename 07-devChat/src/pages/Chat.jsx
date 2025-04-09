@@ -1,78 +1,113 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const Chat = (props) => {
-    const [messageList, setMessageList] = useState([]);
-    const messageRef = useRef(null);
-    const bottomRef = useRef(null);
-    
+  const { username } = props;
+  const [messageList, setMessageList] = useState([]);
+  const messageRef = useRef(null);
+  const bottomRef = useRef(null);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const socketRef = useRef(null);
+
   useEffect(() => {
-    props.socket.on("receive_message", (data) => {
-      setMessageList((current) => [...current, data]);
-  });
-  
-  return () => props.socket.off("receive_message");
-}, [props.socket]);
+    // Conectando ao WebSocket na porta 8181 (corrigido)
+    socketRef.current = new WebSocket("ws://localhost:8181");
+
+    socketRef.current.onopen = () => {
+      console.log("🟢 Conectado ao servidor WebSocket!");
+    };
+
+    socketRef.current.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        setMessageList((current) => [...current, data]);
+      } catch {
+        console.log("Mensagem recebida (formato bruto):", event.data);
+        setMessageList((current) => [
+          ...current,
+          { author: "Servidor", text: event.data },
+        ]);
+      }
+    };
+
+    socketRef.current.onclose = () => {
+      console.log("🔌 Desconectado do servidor WebSocket.");
+    };
+
+    return () => {
+      socketRef.current?.close();
+    };
+  }, []);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messageList]);
 
-const handleSubmit = () => {
-  if(props.socket.author=="undefined") window.location.reload();
-  const message = messageRef.current.value;
-  if(!message.trim()) return;
+  const handleSubmit = () => {
+    const message = messageRef.current.value;
+    if (!message.trim()) return;
 
-  props.socket.emit("message", message);
+    // Verificando se o WebSocket está aberto antes de enviar a mensagem
+    if (socketRef.current.readyState === WebSocket.OPEN) {
+      const data = {
+        author: username, // Usa o nome de usuário real
+        text: message,
+      };
 
-  messageRef.current.value = "";
-  messageRef.current.focus();
-};
+      socketRef.current.send(JSON.stringify(data)); // Envia a mensagem via WebSocket
+      setMessageList((current) => [...current, data]); // Adiciona a mensagem na lista de mensagens
+
+      messageRef.current.value = "";
+      messageRef.current.focus();
+    } else {
+      console.error("WebSocket não está aberto. Tente novamente mais tarde.");
+    }
+  };
+
+  const toggleMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
     <div
-      id="chat-container"
-      style={{ width: "400px", height: "600px" }}
-      className="m-4 bg-secondary rounded-4 p-3 d-flex flex-column"
+      className={`chat-background ${isDarkMode ? "dark-mode" : "light-mode"}`}
     >
-      <div
-        id="chat-body"
-        className="d-flex flex-column gap-3 overflow-y-hidden h-100"
-      >
-        {messageList.map((message, index) => (
-          <div
-            className={`${message.authorId===props.socket.id 
-            ? "align-self-end ms-5 bg-dark"
-            : "align-self-start me-5 bg-dark-subtle text-dark"
-            } rounded-3 p-2`}
-            key={index}
-          >
-            <div id="message-author" className="fw-bold">
-              {message.author}
+      <button className="mode-toggle-btn" onClick={toggleMode}>
+        {isDarkMode ? "🌙 Dark" : "☀️ Light"}
+      </button>
+
+      <div id="chat-container">
+        <div className="chat-header">💭 devChat</div>
+
+        <div id="chat-body">
+          {messageList.map((message, index) => (
+            <div
+              className={`chat-message ${
+                message.author === username ? "self" : "other"
+              }`}
+              key={index}
+            >
+              <div className="fw-bold mb-1">{message.author}</div>
+              <div>{message.text}</div>
             </div>
-            <div id="message-text">{message.text}</div>
-          </div>
-        ))}
-        <div ref={bottomRef} />
-      </div>
-      {/* Delimita a parte debaixo das mensagens */}
-      <div id="chat-footer" className="input-group ">
-        <input
-          ref={messageRef}
-          autoFocus
-          id="msgUser"
-          name="msgUser"
-          type="text"
-          className="form-control bg-dark-subtle border-0"
-          placeholder="Mensagem"
-          onKeyDown={(e) => e.key=="Enter" && handleSubmit()}
-        />
-        <button
-          className="btn btn-dark m-0 input-group-text"
-          id="basic-addon1"
-          onClick={() => handleSubmit()}
-        >
-          <i className="bi bi-send-fill"></i>
-        </button>
+          ))}
+          <div ref={bottomRef} />
+        </div>
+
+        <div id="chat-footer">
+          <input
+            ref={messageRef}
+            autoFocus
+            id="msgUser"
+            name="msgUser"
+            type="text"
+            placeholder="Digite uma mensagem"
+            className="chat-input"
+            onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+          />
+          <button className="send-button" onClick={handleSubmit}>
+            <i className="bi bi-send-fill"></i>
+          </button>
+        </div>
       </div>
     </div>
   );

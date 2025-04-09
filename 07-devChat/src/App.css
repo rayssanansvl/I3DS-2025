@@ -1,0 +1,453 @@
+/* Estilo da tela principal */
+.join-container {
+    background-image: url("/45104.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+  
+  /* Título principal */
+  .join-title {
+    font-size: 3.2rem;
+    color: #075E54;
+    font-weight: 700;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  }
+  
+  /* Card central */
+  .join-card {
+    background-color: rgba(255, 255, 255, 0.96);
+    width: min(600px, 95%);
+    padding: 50px 40px;
+    gap: 24px;
+  }
+  
+  /* Subtítulo */
+  .join-subtitle {
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  /* Texto explicativo */
+  .join-description {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 0;
+  }
+  
+/* Campo de input personalizado */
+.join-input {
+    width: 100%;
+    max-width: 100%;
+    height: 60px; /* Aumenta a altura fixa */
+    border-radius: 50px; /* Mais arredondado */
+    padding: 0 24px; /* Espaçamento lateral */
+    font-size: 1.25rem; /* Texto maior */
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .join-input:focus {
+    box-shadow: 0 0 0 3px #25D366;
+    border-color: transparent;
+  }
+  
+  
+/* Botão personalizado */
+.join-button {
+    background-color: #25D366 !important;
+    color: #fff !important;
+    border-radius: 50px;
+    padding: 10px 10px !important; /* Aumenta altura e largura */
+    font-size: 1.3rem !important; /* Aumenta o tamanho do texto */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25) !important;
+    width: 100% !important; /* Garante largura total */
+    display: inline-block; /* Garante o alinhamento correto */
+    text-align: center;
+}
+
+/* Efeito ao passar o mouse */
+.join-button:hover {
+    background-color: #1ebe5d !important;
+}
+
+/* Fundo que cobre toda a tela */
+.chat-background {
+    background-image: linear-gradient(109.6deg, rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Container do chat */
+#chat-container {
+    margin: 1rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+    width: 400px;
+    height: 600px;
+    border-radius: 25px;
+    overflow: hidden;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #e5ddd5;
+}
+
+/* Cabeçalho do Chat */
+.chat-header {
+    background-color: #064E3B;
+    color: #fff;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Corpo do Chat */
+#chat-body {
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    background-image: url('/fundodevChat.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/* Mensagem do Chat */
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    max-width: 75%;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.chat-message.self {
+    align-self: flex-end;
+    background-color: #dcf8c6;
+    color: #333;
+}
+
+.chat-message.other {
+    align-self: flex-start;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Rodapé do Chat */
+#chat-footer {
+    display: flex;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    gap: 10px;
+}
+
+/* Input de mensagem */
+#msgUser {
+    flex-grow: 1;
+    border-radius: 50px;
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+/* Botão de envio */
+.send-button {
+    border-radius: 50%; /* Torna o botão perfeitamente redondo */
+    background-color: #25D366;
+    color: #fff;
+    font-weight: bold;
+    width: 50px; /* Define largura do botão */
+    height: 50px; /* Define altura do botão para que fique proporcional à largura */
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #1ebe5d;
+}
+
+/* Rodapé do Chat */
+#chat-footer {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o botão e o input */
+    padding: 1rem;
+    background-color: #f0f0f0;
+    gap: 10px; /* Espaçamento entre o botão e a caixa */
+}
+
+/* Input de mensagem */
+#msgUser {
+    flex-grow: 1; /* Faz o input ocupar o espaço restante */
+    border-radius: 50px;
+    padding: 1rem;
+    border: none;
+    background-color: #fff;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: inset 1px 1px 4px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+/* Botão de envio */
+.send-button {
+    border-radius: 50%; /* Deixa o botão redondo */
+    background-color: #25D366;
+    color: #fff;
+    font-weight: bold;
+    width: 50px; /* Tamanho fixo para o botão */
+    height: 50px; /* Tamanho fixo para o botão */
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o ícone dentro do botão */
+    cursor: pointer;
+}
+
+.send-button:hover {
+    background-color: #1ebe5d;
+}
+
+/* Botão de envio */
+/* Botão de envio */
+.send-button {
+    border-radius: 50%; /* Torna o botão redondo */
+    background-color: #25D366;
+    color: #fff;
+    font-weight: bold;
+    width: 50px; /* Define largura do botão */
+    height: 50px; /* Define altura do botão */
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    border: none;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    cursor: pointer;
+    padding: 0; /* Remove qualquer padding adicional */
+}
+
+/* Aumenta e alinha o ícone dentro do botão */
+.send-button i {
+    font-size: 1.2rem; /* Ajuste para aumentar o ícone */
+    margin: 0; /* Remove margens adicionais */
+    line-height: 1; /* Garante que o ícone não esteja desalinhado */
+}
+
+.send-button:hover {
+    background-color: #1ebe5d;
+}
+
+/* Modo claro (Light Mode) */
+.light-mode {
+    background-image: linear-gradient(109.6deg, rgba(254,253,205,1) 11.2%, rgba(163,230,255,1) 91.1%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333; /* Fontes escuras para modo claro */
+}
+
+/* Modo escuro (Dark Mode) */
+.dark-mode {
+    background-image: url("/07-devChat/public/45104.png"); /* Fundo alternado para imagem no modo escuro */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Fontes claras para modo escuro */
+}
+
+/* Botão para alternar modos */
+.mode-toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mode-toggle-btn:hover {
+    background-color: #1ebe5d;
+}
+
+/* Card central */
+.join-card {
+    background-color: rgba(255, 255, 255, 0.96);
+    width: min(600px, 95%);
+    padding: 50px 40px;
+    gap: 24px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode .join-card {
+    background-color: rgba(255, 255, 255, 0.96);
+    color: #333;
+}
+
+.dark-mode .join-card {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+/* Campo de input */
+.join-input {
+    width: 100%;
+    border-radius: 14px;
+    padding: 18px 20px;
+    font-size: 1.1rem;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode .join-input {
+    background-color: #fff;
+    color: #333;
+}
+
+.dark-mode .join-input {
+    background-color: #666;
+    color: #fff;
+}
+
+/* Rodapé */
+.join-footer {
+    font-size: 0.9rem;
+    color: inherit;
+}
+
+/* Subtítulo */
+.join-subtitle {
+    font-size: 1.8rem;
+    transition: color 0.3s ease; /* Suaviza a mudança de cor */
+}
+
+.light-mode .join-subtitle {
+    color: #333; /* Cor escura para modo claro */
+}
+
+.dark-mode .join-subtitle {
+    color: #fff; /* Cor branca para modo escuro */
+}
+
+/* Texto explicativo */
+.join-description {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+    transition: color 0.3s ease; /* Suaviza a mudança de cor */
+}
+
+.light-mode .join-description {
+    color: #555; /* Cor padrão para modo claro */
+}
+
+.dark-mode .join-description {
+    color: #fff; /* Cor branca para modo escuro */
+}
+
+/* Card central */
+.join-card {
+    width: min(600px, 95%);
+    padding: 50px 40px;
+    gap: 24px;
+    border-radius: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Modo claro - Fundo claro */
+.light-mode .join-card {
+    background-color: rgba(255, 255, 255, 0.96); /* Fundo claro */
+    color: #333; /* Fontes escuras */
+}
+
+/* Modo escuro - Fundo verde escuro */
+.dark-mode .join-card {
+    background-color: #064E3B; /* Verde escuro */
+    color: #fff; /* Fontes claras */
+}
+
+/* Rodapé do Chat */
+#chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode #chat-footer {
+    background-color: #f0f0f0; /* Fundo claro no modo claro */
+    color: #333; /* Fontes escuras */
+}
+
+.dark-mode #chat-footer {
+    background-color: #064E3B; /* Fundo verde escuro no modo escuro */
+    color: #fff; /* Fontes claras */
+}
+
+/* Corpo do Chat */
+#chat-body {
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode #chat-body {
+    background-color: #f0f0f0; /* Fundo claro no modo claro */
+    color: #333; /* Fontes escuras */
+}
+
+.dark-mode #chat-body {
+    background-color: #062E2E; /* Fundo escuro especificamente para o chat */
+    color: #fff; /* Fontes brancas para o modo escuro */
+}
+
+
+
+
+
+
+
+
+
+
+  
