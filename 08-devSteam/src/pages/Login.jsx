@@ -8,9 +8,9 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (nome && email){
-        localStorage.setItem("devLogin", JSON.stringify({ nome, email }));
-        navigate("/");
+    if (nome && email) {
+      localStorage.setItem("devlogin", JSON.stringify({ nome, email }));
+      navigate("/");
     }
   };
 
@@ -21,7 +21,14 @@ const Login = () => {
           <label className="form-label" htmlFor="frmNome">
             Nome
           </label>
-          <input value={nome} onChange={(e) => setNome(e.target.value)} className="form-control" type="text" name="Nome" id="Nome" />
+          <input
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            className="form-control"
+            type="text"
+            name="frmNome"
+            id="frmNome"
+          />
         </div>
 
         <div className="mb-3">
