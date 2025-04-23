@@ -1,7 +1,7 @@
 import React from "react";
 import PromoCard from "./PromoCard";
 
-const Promotion = () => {
+const Promotion = (props) => {
   const games = [
     {
       id: 1,
@@ -89,6 +89,7 @@ const Promotion = () => {
               preco={jogo.preco.toFixed(2)}
               desconto={jogo.desconto}
               imagem={jogo.imagem}
+              onAddCarrinho={props.onAddCarrinho} 
             />
           ))}
       </div>

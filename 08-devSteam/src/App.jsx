@@ -12,9 +12,8 @@ function App() {
 
   return (
     <>
-      <Header contadorJogos={2} />
-      <Promotion />
-      <button onClick={handleAddCarrinho}>+1</button>
+      <Header contadorJogos={contador} />
+      <Promotion onAddCarrinho={handleAddCarrinho} />
     </>
   );
 }
