@@ -1,7 +1,11 @@
 import React from "react";
 
 const CarrinhoOffCanvas = (props) => {
-const total = props.carrinhoItem.reduce((acc, item) => acc + (item.preco - (item.preco * item.desconto) / 100) * item.quantidade, 0);
+  const total = props.carrinhoItem.reduce(
+    (acc, item) =>
+      acc + (item.preco - (item.preco * item.desconto) / 100) * item.quantidade,
+    0
+  );
 
   return (
     <div
@@ -58,11 +62,21 @@ const total = props.carrinhoItem.reduce((acc, item) => acc + (item.preco - (item
                         <button
                           className="btn border-0"
                           disabled={item.quantidade === 1}
+                          onClick={() =>
+                            props.onUpdateCarrinho(item, item.quantidade - 1)
+                          }
                         >
                           -
                         </button>
                         <span>{item.quantidade}</span>
-                        <button className="btn border-0">+</button>
+                        <button
+                          className="btn border-0"
+                          onClick={() =>
+                            props.onUpdateCarrinho(item, item.quantidade + 1)
+                          }
+                        >
+                          +
+                        </button>
                       </div>
 
                       <div className="d-flex flex-column align-items-end">
@@ -88,7 +102,9 @@ const total = props.carrinhoItem.reduce((acc, item) => acc + (item.preco - (item
               <strong>Total</strong>
               <strong>R$ {total.toFixed(2)}</strong>
             </div>
-            <button className="btn btn-success w-100 mt-2">Finalizar Compra</button>
+            <button className="btn btn-success w-100 mt-2">
+              Finalizar Compra
+            </button>
           </>
         )}
       </div>
