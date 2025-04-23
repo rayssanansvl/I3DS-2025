@@ -1,39 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
-body{
-    font-family: "Inter", sans-serif;
-    background-color: #1b2838;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #fff;
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #1b2838;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
 }
 
 .buscar,
-.buscar::placeholder{
-    background-color: #2a475e;
-    color: #d7d7d7;
+.buscar::placeholder {
+  background-color: #2a475e;
+  color: #d7d7d7;
 }
 
-.promoCard{
-    width: 280px;
-    transition: transform 0.2s;
-    background: linear-gradient(to bottom, #19587b, #2b87ae);
+.promoCard {
+  width: 280px;
+  transition: transform 0.2s;
+  background: linear-gradient(to bottom, #19587b, #2b87ae);
 }
 
-.promoCard:hover{
-    transform: scale(1.03);
+.promoCard:hover {
+  transform: scale(1.03);
 }
 
-.desconto{
-    background-color: #4c6b22;
-    color: #beeb14;
+.desconto {
+  background-color: #4c6b22;
+  color: #beeb14;
 }
 
-.corValor{
-    color: #beeb14;
+.corValor {
+  color: #beeb14;
 }
 
 #addCarrinho:hover {
-    background-color: #4c6b22;
+  background-color: #547625;
 }
